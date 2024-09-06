@@ -1,7 +1,14 @@
+import { useDispatch } from 'react-redux';
+import { addGoods } from '../action';
+
 const Goods = () => {
+  const dispatch = useDispatch();
+
   const formHandler = (event) => {
     event.preventDefault();
     console.log(event.target.elements);
+    let data = event.target.elements;
+    dispatch(addGoods(data.id.value, data.title.value, data.image.value));
   };
 
   return (
