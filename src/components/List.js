@@ -1,6 +1,18 @@
 function List(data) {
+  console.log('============');
   console.log(data);
-  return <div></div>;
+  console.log('============');
+  return (
+    <div>
+      <ul>
+        {data.goods.map((item) => (
+          <li key={item.id}>
+            {item.title} <img src={item.image} className='image' alt='goods' />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default List;
